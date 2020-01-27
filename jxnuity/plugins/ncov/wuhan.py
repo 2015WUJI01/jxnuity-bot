@@ -28,6 +28,17 @@ async def find_page(bot):
     db_file = path.join(path.dirname(__file__), 'db.txt')
     with open(db_file, "w") as f:
         f.write("\n".join(news_list))
+    # with open(path.join(path.dirname(__file__), 'news.json'), "r") as f:
+    #     f.write("[{" + json1 + "}]")
+
+    # news_dict = json.loads(news_json)
+    file = path.join(path.dirname(__file__), 'news.json')
+    with open(file, 'r', encoding='gbk') as f:
+        news_json = json.load(f)
+        # news_dict = json.loads(news_json)
+        # 字典是支持嵌套的，
+        print(type(news_json))
+        print(news_json)
 
     # 分析数据
     for i in news_list:

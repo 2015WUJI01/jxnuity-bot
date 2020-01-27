@@ -5,6 +5,6 @@ from . import wuhan
 bot = get_bot()
 
 
-@scheduler.scheduled_job('interval', seconds=3)
+@scheduler.scheduled_job('interval', seconds=5)
 async def timer():
     await wuhan.find_page(bot)
